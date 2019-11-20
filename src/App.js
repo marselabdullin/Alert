@@ -7,12 +7,14 @@ export default class App extends Component {
   }
 
   randomAlert() {
-    const randomNum = (Math.ceil(Math.random() * 100));
-    if( randomNum <= 33) {
+
+    const randomNum = Math.random();
+
+    if( randomNum <= 0.33 ) {
       this.setState({
         alertColor: 'success'
       })
-    } else if (randomNum >= 34 && randomNum <= 66) {
+    } else if ( randomNum <= 0.66 ) {
       this.setState({
         alertColor: 'danger'
       })
@@ -24,8 +26,7 @@ export default class App extends Component {
   }
 
   render() {
-    let {alertColor} = this.state;
-
+    const {alertColor} = this.state;
     const classes=`alert alert-${alertColor}`;
     const alertMessage = (
       <div className={classes} role="alert">
