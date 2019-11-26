@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Inter from './components/inter';
 
 export default class App extends Component {
 
@@ -27,9 +28,8 @@ export default class App extends Component {
 
   render() {
     const {alertColor} = this.state;
-    const classes=`alert alert-${alertColor}`;
     const alertMessage = (
-      <div className={classes} role="alert">
+      <div className={`alert alert-${alertColor}`} role="alert">
         Уведомление
       </div>
     )
@@ -48,6 +48,7 @@ export default class App extends Component {
             Получить уведомление!
           </button> 
         </div>
+        <Inter />
       </div>
     );
   } 
